@@ -1,116 +1,97 @@
-@charset "utf-8";
-
-html,body {height: 100%;}
-body {
-	margin: 0px;
-	padding: 0px;
-	color: #776955;	
-	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	
+body{
+    color: saddlebrown;
+    background-color: bisque;
+    font-family:"ヒラギノ角ゴ Pro W3";
 	font-size: 16px;	
-	line-height: 2;		
-	background: #faf7f3;	
-	-webkit-text-size-adjust: none;
+    line-height: 2;		
 }
-h1,h2,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
-ul {list-style-type: none;}
-ol {padding-left: 40px;padding-bottom: 15px;}
-img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
-table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
-
+ul {list-style-type: none;
+    text-align: center;
+    margin: 200px 20px 0px 0px;
+}
 a {
-	color: #776955;		
-	transition: 0.5s;	
+	color: #776955;		/*リンクテキストの色*/
+	transition: 0.5s;	/*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
 }
 a:hover {
-	color: #ff4765;			
-	text-decoration: none;	
+	color: #ff4765;			/*マウスオン時の文字色*/
 }
-
-
 header {
 	height: 100%;
 	overflow: auto;
 	position: relative;
-	background: #ea96a3;	
+	background: #ea96a3;	/*背景色*/
 }
-
 header #logo img {
 	display: block;
-	width: 20%;	
+	width: 20%;	/*画像の幅*/
 	position: absolute;
-	left: 40%;		
-	bottom: 50%;	
-}
-
-#menubar {
-	position: absolute;
-	bottom: 20%;	
-	left: 0px;
-	width: 100%;
-	text-align: center;
-}
-
-#menubar li {
-	display: inline-block;
-	margin: 0 1%;
-	animation-name: opa1;
-	animation-delay: 1S;
-	animation-duration: 1S;
-	animation-fill-mode: both;
+	left: 40%;		/*ロゴやメニューが入っているブロックに対して、左からの配置場所の指定。*/
+	bottom: 50%;	/*ロゴやメニューが入っているブロックに対して、下からの配置場所の指定。*/
 }
 #menubar li a {
-	text-decoration: none;display: block;text-align: center;
-	width: 140px;	
-	color: #fff;	
-	border-bottom: 2px solid transparent;	
-	padding-bottom: 7px;	
+	width: 140px;	/*メニューの幅*/
+	color: #fff;	/*文字色*/
+	border-bottom: 2px solid transparent;	/*下線の幅、線種、色。transparentは透明の事。*/
+	padding-bottom: 7px;	/*下線と文字の間にとる余白*/
 }
-
 #menubar li a:hover {
-	border-bottom: 2px solid #fff;	
-	letter-spacing: 0.1em;			
+	letter-spacing: 0.1em;			/*文字間隔を少しだけ広くする指定。そのままがいいならこの１行を削除。*/
 }
-
-#contents h2 {
+h2 {
 	margin-bottom: 20px;
 	clear: both;
 	padding: 0 20px;
-	font-size: 20px;		
-	text-align: center;		
-	letter-spacing: 0.1em;	
-	background: #ea96a3;	
-	color: #fff;			
-	border-radius: 100px;	
+	font-size: 20px;		/*文字サイズ*/
+	text-align: center;		/*文字をセンタリング*/
+	letter-spacing: 0.1em;	/*文字間隔を少しだけ広くする指定*/
+	background: #ea96a3;	/*背景色*/
+	color: #fff;			/*文字色*/
+	border-radius: 100px;	/*角を丸くする指定。大きめであれば適当で構いません。*/
 }
-
+h3 {
+	margin-bottom: 20px;
+	clear: both;
+	padding: 0 20px;
+	font-size: 18px;		/*文字サイズ*/
+	text-align: center;		/*文字をセンタリング*/
+	letter-spacing: 0.1em;	/*文字間隔を少しだけ広くする指定*/
+	border: 2px solid #ea96a3;	/*枠線の幅、線種、色*/
+	border-radius: 100px;	/*角を丸くする指定。大きめであれば適当で構いません。*/
+	background: #fff;		/*背景色*/
+}
+table {
+    border-spacing: 0;
+    width: auto;
+}
 .ta1 caption {
-	border: 1px solid #999;	
-	border-bottom: none;	
-	text-align: center;		
-	background: #f0f0f0;	
-	font-weight: bold;		
-	padding: 10px;			
+	border: 1px solid #999;	/*テーブルの枠線の幅、線種、色*/
+	border-bottom: none;	/*下線だけ消す*/
+	text-align: center;		/*文字をセンタリング*/
+	background: #f0f0f0;	/*背景色*/
+	font-weight: bold;		/*太字に*/
+	padding: 10px;			/*ボックス内の余白*/
 }
-
-.ta1 th.tamidashi {
+/*テーブル１行目に入った見出し部分（※tamidashi）*/
+.ta1 th {
 	width: auto;
-	text-align: center;	
-	background: #f0f0f0;	
+	text-align: center;	/*文字をセンタリング*/
+	background: #f0f0f0;	/*背景色*/
 }
-
+/*ta1テーブルブロック設定*/
 .ta1 {
 	table-layout: fixed;
 	width: 100%;
 	margin: 0 auto 20px;
-	background: #fff;	
+	background: #fff;	/*背景色*/
 }
 .ta1, .ta1 td, .ta1 th {
 	word-break: break-all;
-	border: 1px solid #999;	
-	padding: 10px;			
+	border: 1px solid #999;	/*テーブルの枠線の幅、線種、色*/
+	padding: 10px;			/*テーブル内の余白*/
 }
-
+/*テーブルの左側ボックス*/
 .ta1 th {
-	text-align: center;	
-	width: 30%;			
+	text-align: center;	/*センタリング*/
+	width: 30%;			/*幅*/
 }
